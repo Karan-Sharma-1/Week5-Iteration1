@@ -10,6 +10,8 @@ const {
   getBlogs,
   createBlog,
   getBlog,
+  deleteBlog,
+  putBlog
 } = require("./controllers/blogController");
 
 // middleware
@@ -23,6 +25,11 @@ app.get("/api/blogs", getBlogs);
 app.get("/api/blogs/:id", getBlog);
 // Add a new blog
 app.post("/api/blogs", createBlog);
+// Delete a blog
+app.delete("/api/blogs/:id", deleteBlog);
+// Update a blog using Put
+app.put("/api/blogs/:id", putBlog);
+
 
 const PORT = 4000;
 app.listen(PORT, () => {
